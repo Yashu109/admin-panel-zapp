@@ -1,0 +1,234 @@
+/* OrderItems.css */
+.order-detail-card.order-items {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.order-detail-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 12px;
+}
+
+.order-detail-card .card-header h2 {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.order-detail-card .header-icon {
+  margin-right: 8px;
+  color: #5a67d8;
+}
+
+.order-detail-card .item-count {
+  background-color: #f3f4f6;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.order-detail-card .items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.order-detail-card .item-card {
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.order-detail-card .item-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: #e5e7eb;
+}
+
+.order-detail-card .item-main {
+  display: flex;
+  padding: 16px;
+  gap: 16px;
+  align-items: center;
+}
+
+.order-detail-card .item-image-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.order-detail-card .item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.order-detail-card .item-image-placeholder {
+  color: #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.order-detail-card .item-details {
+  flex: 1;
+}
+
+.order-detail-card .item-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.order-detail-card .item-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #1f2937;
+}
+
+.order-detail-card .toggle-details-btn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.order-detail-card .toggle-details-btn:hover {
+  color: #4b5563;
+}
+
+.order-detail-card .item-variant {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.order-detail-card .item-description {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 8px 0;
+  line-height: 1.4;
+  padding: 8px;
+  background-color: #f9fafb;
+  border-radius: 6px;
+}
+
+.order-detail-card .item-price-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.order-detail-card .item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.order-detail-card .quantity-label {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.order-detail-card .quantity-value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  background-color: #f3f4f6;
+  border-radius: 4px;
+  padding: 0 6px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.order-detail-card .item-price {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.order-detail-card .item-total {
+  text-align: right;
+  min-width: 100px;
+}
+
+.order-detail-card .total-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.order-detail-card .total-value {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.order-detail-card .item-customizations {
+  background-color: #f9fafb;
+  padding: 12px 16px;
+  border-top: 1px dashed #e5e7eb;
+  font-size: 14px;
+}
+
+.order-detail-card .item-customizations h4 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.order-detail-card .item-customizations ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #6b7280;
+}
+
+.order-detail-card .order-summary {
+  margin-top: 20px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 16px;
+}
+
+.order-detail-card .summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.order-detail-card .summary-row.total {
+  font-weight: 700;
+  font-size: 16px;
+  color: #1f2937;
+  border-top: 2px solid #f0f0f0;
+  margin-top: 8px;
+  padding-top: 12px;
+}

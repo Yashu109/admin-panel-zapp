@@ -1,0 +1,124 @@
+ /* src/components/Login/Login.css */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0a1929;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(0, 255, 200, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(0, 100, 255, 0.1) 0%, transparent 50%);
+  font-family: 'Arial', sans-serif;
+}
+
+.login-box {
+  width: 400px;
+  padding: 40px;
+  background-color: rgba(16, 43, 94, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 230, 180, 0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-header h1 {
+  color: #b18751;
+  margin: 0;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.login-header p {
+  color: #7a93ac;
+  margin-top: 10px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  color: #b9d4e9;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s;
+  border: 1px solid rgba(0, 230, 180, 0.2);
+}
+
+.input-group input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 230, 180, 0.3);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #00b894, #0984e3);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button:hover {
+  background: linear-gradient(135deg, #0073d1, #0a96ff);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 230, 180, 0.4);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+.error-message {
+  background-color: rgba(255, 87, 87, 0.2);
+  color: #ff5757;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  border-left: 4px solid #ff5757;
+}
+
+.login-footer {
+  margin-top: 30px;
+  text-align: center;
+  color: #7a93ac;
+  font-size: 0.8rem;
+}
+
+.small-text {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  margin-top: 5px;
+}

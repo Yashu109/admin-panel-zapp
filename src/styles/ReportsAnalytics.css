@@ -1,0 +1,717 @@
+/* ReportsAnalytics Responsive Fix */
+
+/* Base styles for proper content containment */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Main container */
+.reports-analytics {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding: 20px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Header styles */
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.header-title {
+  flex: 1;
+  min-width: 200px;
+}
+
+.header-title h1 {
+  margin: 0 0 5px;
+  font-size: clamp(18px, 5vw, 24px);
+  font-weight: 600;
+  color: #343a40;
+  word-break: break-word;
+}
+
+.header-title p {
+  margin: 0;
+  color: #6c757d;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.period-filter {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 0 12px;
+  min-width: 120px;
+  flex-shrink: 0;
+}
+
+.period-filter svg {
+  color: #6c757d;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.period-select {
+  border: none;
+  padding: 8px 4px;
+  font-size: 14px;
+  color: #495057;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+}
+
+.refresh-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.refresh-button:hover {
+  background-color: #f1f3f5;
+}
+
+.refresh-button svg {
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+
+.export-dropdown {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.export-button {
+  display: flex;
+  align-items: center;
+  background-color: #4361ee;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 15px;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.export-button:hover {
+  background-color: #3a56d4;
+}
+
+.export-button svg {
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+
+.export-button svg:last-child {
+  margin-right: 0;
+  margin-left: 4px;
+  flex-shrink: 0;
+}
+
+.export-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 5px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  z-index: 10;
+  display: none;
+}
+
+.export-dropdown:hover .export-menu {
+  display: block;
+}
+
+.export-option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 14px;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.export-option:hover {
+  background-color: #f8f9fa;
+}
+
+.export-option svg {
+  margin-right: 8px;
+  color: #6c757d;
+  flex-shrink: 0;
+}
+
+/* Loading styles */
+.loading-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 100%;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #6c757d;
+}
+
+.loading-spinner svg {
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.spinning {
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dashboard styles */
+.analytics-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Metrics cards */
+.metrics-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.metric-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  min-width: 0; /* Important for proper text overflow handling */
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.metric-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.total-orders .metric-icon {
+  background-color: rgba(103, 58, 183, 0.1);
+  color: #673ab7; /* Purple */
+}
+
+.total-revenue .metric-icon {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #4caf50; /* Green */
+}
+
+.avg-order-value .metric-icon {
+  background-color: rgba(255, 152, 0, 0.1);
+  color: #ff9800; /* Orange */
+}
+
+.active-shops .metric-icon {
+  background-color: rgba(33, 150, 243, 0.1);
+  color: #2196f3; /* Blue */
+}
+
+.customer-satisfaction .metric-icon {
+  background-color: rgba(156, 39, 176, 0.1);
+  color: #9c27b0; /* Purple */
+}
+
+.sentiment-score .metric-icon {
+  background-color: rgba(0, 188, 212, 0.1);
+  color: #00bcd4; /* Cyan */
+}
+
+.positive {
+  color: #4caf50 !important; /* Green */
+}
+
+.negative {
+  color: #f44336 !important; /* Red */
+}
+
+.metric-content {
+  flex: 1;
+  min-width: 0; /* Important for proper text overflow handling */
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.metric-label {
+  margin: 0 0 5px;
+  font-size: 14px;
+  color: #6c757d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.metric-value {
+  margin: 0;
+  font-size: clamp(18px, 4vw, 24px);
+  font-weight: 600;
+  color: #343a40;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Section styles */
+.analytics-section {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  width: 100%;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #f1f3f5;
+  cursor: pointer;
+  width: 100%;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #343a40;
+  display: flex;
+  align-items: center;
+  word-break: break-word;
+}
+
+.section-header h2 svg {
+  margin-right: 10px;
+  color: #4361ee;
+  flex-shrink: 0;
+}
+
+.section-content {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 20px;
+  width: 100%;
+  overflow: hidden; /* Important to prevent layout breakage */
+}
+
+/* Chart styles with responsive scrolling */
+.chart-container {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  width: 100%;
+  overflow: hidden;
+  min-width: 0; /* Important for grid item containment */
+}
+
+.chart-container h3 {
+  margin: 0 0 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #495057;
+  word-break: break-word;
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Chart scrollbar styles */
+.chart-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.chart-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.chart-wrapper::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.chart-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Top shops list */
+.top-shops-list {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  width: 100%;
+  min-width: 0; /* Important for grid item containment */
+}
+
+.top-shops-list h3 {
+  margin: 0 0 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #495057;
+  word-break: break-word;
+}
+
+.shops-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  overflow-y: auto;
+  max-height: 300px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Shops list scrollbar styles */
+.shops-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.shops-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.shops-list::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.shops-list::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.shop-item {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 6px;
+  padding: 12px 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.shop-rank {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #4361ee;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.shop-info {
+  flex: 1;
+  min-width: 0; /* Important for text overflow handling */
+  overflow: hidden;
+}
+
+.shop-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #343a40;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shop-stats {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.shop-orders, .shop-rating {
+  font-size: 12px;
+  color: #6c757d;
+  white-space: nowrap;
+}
+
+.shop-rating {
+  display: flex;
+  align-items: center;
+}
+
+.shop-revenue {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4361ee;
+  white-space: nowrap;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.star-icon {
+  color: #ffc107;
+  margin-right: 2px;
+  flex-shrink: 0;
+}
+
+/* Order stats */
+.order-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: 100%;
+}
+
+.order-stat-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  width: 100%;
+  min-width: 0; /* Important for grid item containment */
+}
+
+.order-stat-card h3 {
+  margin: 0 0 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #495057;
+  word-break: break-word;
+}
+
+.order-stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #6c757d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+}
+
+.stat-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #343a40;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* No data message */
+.no-data-message {
+  text-align: center;
+  padding: 20px;
+  color: #6c757d;
+  font-style: italic;
+  width: 100%;
+}
+
+/* Chart specific responsive fix */
+.recharts-wrapper, .recharts-surface {
+  width: 100% !important;
+  min-width: 500px !important; /* Ensures charts are scrollable on small screens */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .section-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .order-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .metrics-cards {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  
+  .chart-wrapper {
+    min-height: 350px; /* Ensure charts have enough height on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .analytics-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .header-actions {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .period-filter, .refresh-button, .export-dropdown {
+    flex: 1;
+    min-width: 100px;
+  }
+  
+  .metrics-cards {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+  
+  .reports-analytics {
+    padding: 15px;
+  }
+  
+  .section-content {
+    padding: 15px;
+  }
+  
+  .chart-container, .top-shops-list, .order-stat-card {
+    padding: 10px;
+  }
+  
+  /* Make scrollbars more visible on mobile */
+  .chart-wrapper::-webkit-scrollbar, 
+  .shops-list::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+  
+  .chart-wrapper::-webkit-scrollbar-thumb, 
+  .shops-list::-webkit-scrollbar-thumb {
+    background: #a8a8a8;
+  }
+}
+
+@media (max-width: 480px) {
+  .reports-analytics {
+    padding: 10px;
+  }
+  
+  .metric-card {
+    padding: 15px;
+  }
+  
+  .metric-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  .period-select {
+    font-size: 13px;
+  }
+  
+  .refresh-button, .export-button {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+  
+  .shop-item {
+    padding: 10px;
+  }
+  
+  .shop-revenue {
+    font-size: 14px;
+  }
+  
+  /* Add fade indicator for scrollable charts on mobile */
+  .chart-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 30px;
+    background: linear-gradient(to right, rgba(248,249,250,0), rgba(248,249,250,0.9));
+    pointer-events: none;
+  }
+}

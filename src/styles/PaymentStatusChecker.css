@@ -1,0 +1,156 @@
+.payment-status-checker {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+  background-color: #f8fafc;
+}
+
+.payment-ref-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.payment-ref-label {
+  font-weight: 500;
+  color: #64748b;
+  margin-right: 8px;
+}
+
+.payment-ref-id {
+  font-family: monospace;
+  font-weight: 600;
+  color: #334155;
+  background-color: #e2e8f0;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.payment-status-result {
+  margin: 16px 0;
+}
+
+.status-header {
+  margin-bottom: 12px;
+}
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.status-indicator.completed,
+.status-indicator.success {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-indicator.processing,
+.status-indicator.initiated {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.status-indicator.failed,
+.status-indicator.failure {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.status-icon {
+  margin-right: 6px;
+}
+
+.status-icon.success {
+  color: #16a34a;
+}
+
+.status-icon.processing,
+.status-icon.initiated {
+  color: #0284c7;
+}
+
+.status-icon.failed {
+  color: #dc2626;
+}
+
+.status-icon.unknown {
+  color: #f59e0b;
+}
+
+.status-details {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.status-detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.status-detail-row:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.detail-label {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.detail-value {
+  font-weight: 600;
+  color: #334155;
+}
+
+.status-error {
+  color: #b91c1c;
+  background-color: #fee2e2;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.check-status-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #0284c7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.check-status-button:hover {
+  background-color: #0369a1;
+}
+
+.check-status-button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
